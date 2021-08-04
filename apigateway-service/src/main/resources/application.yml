@@ -1,29 +1,24 @@
-
 server:
   port: 8000
 
-eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
-    service-url:
-      defaultZome: http://localhost:8761/eureka
-
 spring:
-  apllication:
+  application:
     name: apigateway-service
   cloud:
     gateway:
-
-      # 라우팅 설정(리버스프록시)
-      # 해당 gateway의 predicates의 path로 지정된 요청은 모두 uri로 라우팅 된다.
-      # 이때 path로 전달된 값은 uri에 지정된 서비스를 호출 할 때 그대로 전달된다.
       routes:
-        - id: first-service
-          uri: http://localhost:8081
+        - id: user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/first-service/**
-        - id: second-service
-          uri: http://localhost:8082
-          predicates:
-            - Path=/second-service/**
+            - Path=/user-service/**
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+
