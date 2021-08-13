@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: user-service
+    name: order-service
   h2:
     console:
       enabled: true
@@ -17,9 +17,10 @@ spring:
     username: sa
     password:
   jpa:
-    show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
 
 eureka:
   instance:
@@ -30,10 +31,6 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
-greeting:
-  message: Welcome to the simple E-commerce
-
-token:
-  expiration_time: 864000000
-  secret: user_token
-
+logging:
+  level:
+    com.example.orderservice: DEBUG
