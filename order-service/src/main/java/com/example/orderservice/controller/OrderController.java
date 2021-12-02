@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/order-service")
+//@RequestMapping("/order-service")
 public class OrderController {
 
     private OrderService orderService;

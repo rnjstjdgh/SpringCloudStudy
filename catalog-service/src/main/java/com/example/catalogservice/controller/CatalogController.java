@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/catalog-service")
+//@RequestMapping("/catalog-service")
 public class CatalogController {
 
     private Environment env;
