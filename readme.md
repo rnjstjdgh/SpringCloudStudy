@@ -70,3 +70,4 @@
     * 이 방식이 유효하려면 항상 config server가 모든 마이크로 서비스 중 가장 먼저 실행되어야 한다.
       * config server가 재기동 되면 bootstrap.yml을 덮어쓰는 방식으로 구현함 
       * 따라서, config server가 죽었다가 다시 떠도 문제가 안됨 
+      * 이러한 방식으로 discovery-service도 port를 0으로 할 수 있지 않을까??
