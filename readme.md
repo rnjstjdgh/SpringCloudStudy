@@ -44,3 +44,8 @@
 ### 찾는게 목적이니 discovery-service를 기준으로 움직이는게 맞는것 아닐까?
 * 최소에 discovery-service를 가장 먼저 실행시키고 그 다음에 config-service를 실행시키면서 discovery-service에게 등록하고 나머지 서비스들도 실행하면서 config-service에서 설정을 읽고 discovery-service에 등록하는 방식으로 하면 되는것 아닌가?
 * 이렇게 되면, discovery-service의 엔드포인트만 맨 처음에 공유 되면 되는 것 아닌가?
+
+
+### 아니면 결국 모든 서비스는 설정 정보에 의존해서 연관관계가 묶이기 때문에 config server를 중심으로 생각하는게 맞는건가?
+* 지금으로서는 이게 더 맞는 방법으로 보인다.
+* 
