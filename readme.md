@@ -39,3 +39,7 @@
 ### 서버 위치는 항상 변한다는 점을 해결하고 싶은데 항상 변하는 서버 위치를 결코 변하지 않는 파일 위치를 지정해 기록해 두는 것으로 해결 할 수 있지 않을까? 하는 생각 
 
 ### 일반 마이크로 서비스는 기동 시 자동으로 서비스 디스커버리에 엔드포인트가 등록되기 때문에, spring cloud 말고 내가 별도로 관리해야 하는 엔드포인트는 gateway, service-discovery, config server 3가지 일 것이다.
+
+### 찾는게 목적이니 discovery-service를 기준으로 움직이는게 맞는것 아닐까?
+* 최소에 discovery-service를 가장 먼저 실행시키고 그 다음에 config-service를 실행시키면서 discovery-service에게 등록하고 나머지 서비스들도 실행하면서 config-service에서 설정을 읽고 discovery-service에 등록하는 방식으로 하면 되는것 아닌가?
+* 이렇게 되면, discovery-service의 엔드포인트만 맨 처음에 공유 되면 되는 것 아닌가?
