@@ -69,3 +69,4 @@
     * 이러한 방식으로 config server가 실행되는 순간 고정되는 엔드포인트를 다른 모든 서비스의 bootstrap.yml로 전파시켜 다른 서비스들로 하여금 config server를 찾을 수 있도록 했다.
     * 이 방식이 유효하려면 항상 config server가 모든 마이크로 서비스 중 가장 먼저 실행되어야 한다.
       * config server가 재기동 되면 bootstrap.yml을 덮어쓰는 방식으로 구현함 
+      * 따라서, config server가 죽었다가 다시 떠도 문제가 안됨 
