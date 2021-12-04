@@ -63,3 +63,8 @@
 * 서비스 구동 시 해당 서비스의 엔드포인트를 yml파일 편집하여 기존 엔드포인트에 추가해 주는 방식을 생각해 볼 수 있을 것 같다.
 * spring boot 구동 직후 특정 코드 수행하기
    * https://osc131.tistory.com/139 
+
+### Config server의 port를 0으로 하는거 성공했다.!!!
+* ![image](https://user-images.githubusercontent.com/41561652/144715681-8ddf3284-17a8-4acc-8529-a72f05027337.png)
+    * 이러한 방식으로 config server가 실행되는 순간 고정되는 엔드포인트를 다른 모든 서비스의 bootstrap.yml로 전파시켜 다른 서비스들로 하여금 config server를 찾을 수 있도록 했다.
+    * 이 방식이 유효하려면 항상 config server가 모든 마이크로 서비스 중 가장 먼저 실행되어야 한다.
