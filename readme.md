@@ -52,3 +52,9 @@
     * 매 요청마다 discovery-service를 조회할 수 밖에 없기 때문에 discovery service와 다른 서비스는 같은 network에 묶여있는게 맞는것 같다.
     * 유사시에만, config server는 적게 호출 되기 때문에 외부 고정 ip를 부여받을 수 있는 network에 배치해도 큰 문제는 없을 것 같다.
     * 이렇게 되면 discovery server의 엔드포인트를 찾는 것이 문제가 된다.
+
+### yml 파일 편집하는 방법
+* https://stackabuse.com/reading-and-writing-yaml-files-in-java-with-jackson/
+* 서비스 구동 시 해당 서비스의 엔드포인트를 yml파일 편집하여 기존 엔드포인트에 추가해 주는 방식을 생각해 볼 수 있을 것 같다.
+* spring boot 구동 직후 특정 코드 수행하기
+   * https://osc131.tistory.com/139 
