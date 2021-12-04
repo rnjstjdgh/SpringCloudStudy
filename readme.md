@@ -48,4 +48,7 @@
 
 ### 아니면 결국 모든 서비스는 설정 정보에 의존해서 연관관계가 묶이기 때문에 config server를 중심으로 생각하는게 맞는건가?
 * 지금으로서는 이게 더 맞는 방법으로 보인다.
-* 
+* ![image](https://user-images.githubusercontent.com/41561652/144712769-16689fd1-f55f-4962-9dce-26ccd7a6b06d.png)
+    * 매 요청마다 discovery-service를 조회할 수 밖에 없기 때문에 discovery service와 다른 서비스는 같은 network에 묶여있는게 맞는것 같다.
+    * 유사시에만, config server는 적게 호출 되기 때문에 외부 고정 ip를 부여받을 수 있는 network에 배치해도 큰 문제는 없을 것 같다.
+    * 이렇게 되면 discovery server의 엔드포인트를 찾는 것이 문제가 된다.
