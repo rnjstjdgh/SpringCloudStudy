@@ -14,13 +14,14 @@
 1. 가장 먼저 Service discovery, gateway를 올린다.
     * 구동 시 엔드포인트를 약속된 파일에 기입
 2. config server를 올린다
-    * 이때 Service discovery, gateway의 엔드포인트도 약속된 파일에서 읽어서 설정에 추가한다.
+    * 이때 Service discovery, gateway의 엔드포인트도 약속된 파일에서 읽어서 config server 설정에 추가한다.
     * 그 엔드포인트에 헬스체크를 날려보고 죽어있다면 본 테스크도 죽인다.
         * fargate 서비스가 알아서 다시 구동시켜줄 것이다.
         * 그럼 Service discovery, gateway서버가 정상 준비 될 때 까지 이 과정을 반복하게 된다.
     * 또, config server 자기 자신의 엔드포인트도 약속된 파일에 기입한다.
 3. 다른 나머지 서비스를 기동시킨다.
     * 이때 약속된 파일로 부터 config server의 엔드포인트를 얻는다.
+    * 그 엔드포인트에 헬스체크를 날려보고 죽어있다면 본 테스크도 죽인다.  
     * 그리고 모든 설정을 config server로 부터 업데이트 한다.
 
 ### 중요한 것은 config임
