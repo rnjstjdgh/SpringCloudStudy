@@ -2,5 +2,5 @@
 spring:
   cloud:
     config:
-      uri: "http://192.168.230.1:62280"
+      uri: "http://192.168.21.76:64114"
       name: "discovery_service"

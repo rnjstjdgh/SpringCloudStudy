@@ -35,11 +35,17 @@ public class RunAfterApplicationStart implements ApplicationRunner {
         String endPoint = "http://" + InetAddress.getLocalHost().getHostAddress() + ":" + env.getProperty("local.server.port");
         log.info(endPoint);
         Map<String,String> map = new HashMap<>();
-        map.put("user_service", "C:\\Users\\ksh\\OneDrive - dongguk.edu\\SoungHo\\SpringCloudStudy\\SpringCloudStudy\\user-service\\");
-        map.put("discovery_service", "C:\\Users\\ksh\\OneDrive - dongguk.edu\\SoungHo\\SpringCloudStudy\\SpringCloudStudy\\discoveryservice\\");
-        map.put("catalog_service", "C:\\Users\\ksh\\OneDrive - dongguk.edu\\SoungHo\\SpringCloudStudy\\SpringCloudStudy\\catalog-service\\");
-        map.put("gateway_service", "C:\\Users\\ksh\\OneDrive - dongguk.edu\\SoungHo\\SpringCloudStudy\\SpringCloudStudy\\apigateway-service\\");
-        map.put("order_service", "C:\\Users\\ksh\\OneDrive - dongguk.edu\\SoungHo\\SpringCloudStudy\\SpringCloudStudy\\order-service\\");
+//        map.put("user_service", "C:\\Exception\\spring_cloud\\SpringCloudStudy\\user-service\\");
+//        map.put("discovery_service", "C:\\Exception\\spring_cloud\\SpringCloudStudy\\discoveryservice\\");
+//        map.put("catalog_service", "C:\\Exception\\spring_cloud\\SpringCloudStudy\\catalog-service\\");
+//        map.put("gateway_service", "C:\\Exception\\spring_cloud\\SpringCloudStudy\\apigateway-service\\");
+//        map.put("order_service", "C:\\Exception\\spring_cloud\\SpringCloudStudy\\order-service\\");
+
+        map.put("user_service", "..\\user-service\\");
+        map.put("discovery_service", "..\\discoveryservice\\");
+        map.put("catalog_service", "..\\catalog-service\\");
+        map.put("gateway_service", "..\\apigateway-service\\");
+        map.put("order_service", "..\\order-service\\");
 
         for(String key : map.keySet()) {
             generateBootStrap(key, endPoint, map.get(key) + "src\\main\\resources\\bootstrap.yml");
