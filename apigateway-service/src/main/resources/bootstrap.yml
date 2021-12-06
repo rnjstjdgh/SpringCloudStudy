@@ -1,0 +1,6 @@
+---
+spring:
+  cloud:
+    config:
+      uri: "http://192.168.230.1:62280"
+      name: "gateway_service"

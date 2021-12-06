@@ -1,4 +1,8 @@
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans
 server:
   port: 0
 

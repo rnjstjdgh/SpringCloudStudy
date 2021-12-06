@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/catalog-service")
+//@RequestMapping("/catalog-service")
 public class CatalogController {
 
     private Environment env;
@@ -37,6 +37,10 @@ public class CatalogController {
         return String.format("It's Working in Catalog Service on Port %s", request.getServerPort());
     }
 
+    /***
+     * 상품 조회 api
+     * @return
+     */
     @GetMapping("/catalogs")
     public ResponseEntity<List<ResponseCatalog>> getCatalogs(){
         Iterable<CatalogEntity> orderList = catalogService.getAllCatalogs();
